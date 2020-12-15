@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="716eb481-4f67-415f-8e0a-09a7b100fc75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Loanee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Loanee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LoanValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/LoanValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Loanee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Loanee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LoanValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/LoanValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LoaneeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/LoaneeTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +37,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wildlife-tracker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java-todo" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
