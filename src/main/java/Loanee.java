@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Loanee {
     private int id;
     private String name;
@@ -89,5 +91,24 @@ public class Loanee {
 
     public static String getSELFEMPLOYED() {
         return SELFEMPLOYED;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Loanee)) return false;
+        Loanee loanee = (Loanee) o;
+        return getId() == loanee.getId() &&
+                getAge() == loanee.getAge() &&
+                getTotalIncome() == loanee.getTotalIncome() &&
+                getLoanAmount() == loanee.getLoanAmount() &&
+                Objects.equals(getName(), loanee.getName()) &&
+                Objects.equals(getOccupation(), loanee.getOccupation()) &&
+                Objects.equals(getLoanPurpose(), loanee.getLoanPurpose());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getAge(), getOccupation(), getTotalIncome(), getLoanAmount(), getLoanPurpose());
     }
 }
