@@ -1,9 +1,11 @@
+package models;
+
 import org.junit.After;
 import org.junit.Before;
 
 import static org.junit.Assert.*;
 
-public class LoaneeTest {
+public class LoanValidationTest {
 
     @Before
     public void setUp() throws Exception {
