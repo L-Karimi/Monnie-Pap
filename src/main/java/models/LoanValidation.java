@@ -15,14 +15,17 @@ public class LoanValidation {
     private LoanValidation interestRate;
     private LoanValidation amount;
 
-    public LoanValidation(int id, String name, int age, String occupation, int totalIncome, int loanAmount, String loanPurpose) {
+    public LoanValidation(int id, String name, int age, String occupation, int totalIncome, LoanRequest request, int loanAmount, String loanPurpose, LoanValidation interestRate, LoanValidation amount) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.occupation = occupation;
         this.totalIncome = totalIncome;
+        this.request = request;
         this.loanAmount = loanAmount;
         this.loanPurpose = loanPurpose;
+        this.interestRate = interestRate;
+        this.amount = amount;
         this.durationInDays = durationInDays;
     }
 
@@ -77,5 +80,8 @@ public class LoanValidation {
     private class CurrentOfferResult {
         public LoanValidation amount;
         public LoanValidation interestRate;
+    }
+
+    private class LoanRequest {
     }
 }
