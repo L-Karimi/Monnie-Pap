@@ -7,6 +7,9 @@ public interface loanValidationDao {
 
     //    List
     List<loanValidationDao> getAllLoanValidationD();
+
+    List<Loanee> getAllLoanee();
+
     //    Create
     void add(loanValidationDao loanValidationDao);
     //    Read
