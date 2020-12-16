@@ -32,7 +32,7 @@ public class Sql2oLoaneeDao implements LoaneeDao {
 
     @Override
     public void add(Loanee loanee) {
-        String sql = "INSERT INTO loans (name, age, occupation, totalIncome, loanAmount, loanPurpose) VALUES (:name, :age, :occupation, :totalincome, :loanamout, :loanpurpose) ";
+        String sql = "INSERT INTO lend (name, age, occupation, totalIncome, loanAmount, loanPurpose) VALUES (:name, :age, :occupation, :totalincome, :loanamout, :loanpurpose) ";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
                     .throwOnMappingFailure(false)
@@ -54,21 +54,51 @@ public class Sql2oLoaneeDao implements LoaneeDao {
 
     @Override
     public Loanee findById(int id) {
-        return null;
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM lend WHERE id = :id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Loanee.class);
+        }
     }
 
     @Override
-    public void update(int id, String name, int age, String occupation, int totalIncome, int loanAmount, String loanPurpose) {
-
+    public void update(int id, String newName, int newAge, String newOccupation, int newTotalIncome, int newLoanAmount, String newLoanPurpose) {
+        String sql = "UPDATE lends SET (name, age, occupation, totalIncome, loanAmount, loanPurpose) = (:name, :age, :occupation, :totalincome, loanpurpose)";
+        try(Connection con = sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("name", newName)
+                    .addParameter("age", newAge)
+                    .addParameter("occupation", newOccupation)
+                    .addParameter("totalIncome", newTotalIncome)
+                    .addParameter("loanPurpose", newLoanPurpose)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
     }
 
     @Override
     public void deleteById(int id) {
-
+        String sql = "DELETE from lend WHERE id=:id";
+        try (Connection con = sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
     }
 
     @Override
     public void clearAllLoanee() {
+        String sql = "DELETE from lends";
+        try(Connection con = sql2o.open()){
+            con.createQuery(sql)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
 
     }
 }
