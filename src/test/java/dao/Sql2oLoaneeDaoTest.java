@@ -36,14 +36,21 @@ public class Sql2oLoaneeDaoTest {
         System.out.println("connection closed");
     }
 
+//    @Test
+//    public  void clearAll() throws Exception{
+//        Loanee testLoanee = setupNewLoanee();
+//        loaneeDao.clearAllLoanee();
+//        assertEquals(0, loaneeDao.getAllLoanee().size());
+
+//    }
+
     @Test
-    public  void clearAll() throws Exception{
+    public void addingLoanSetsId() throws Exception {
         Loanee testLoanee = setupNewLoanee();
-        loaneeDao.clearAllLoanee();
-        assertEquals(0, loaneeDao.getAllLoanee().size());
-
+        int originalLoaneeId = testLoanee.getId();
+        loaneeDao.add(testLoanee);
+        assertNotEquals(originalLoaneeId,testLoanee.getId());
     }
-
     // helpers
 
     public Loanee setupNewLoanee(){
