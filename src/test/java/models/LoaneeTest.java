@@ -28,7 +28,12 @@ assertEquals("Shiko", testLoanee.getName());
         assertEquals(5, testLoanee.getId());
     }
 
-
+@Test
+public void setName() {
+        Loanee testLoanee = setUpLoanee();
+        testLoanee.setName("Kelvin");
+        assertNotEquals("Sharon", testLoanee.getName());
+}
 
 
     // helper
