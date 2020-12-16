@@ -1,5 +1,6 @@
 package dao;
-import models.*;
+import models.Loanee;
+
 import java.util.List;
 
 public interface loanValidationDao {
