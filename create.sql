@@ -2,7 +2,7 @@ SET MODE PostgreSQL;
 
 CREATE DATABASE lend;
 
-    \c lend
+    \c lend;
 
     CREATE TABLE IF NOT EXISTS lend (
     id SERIAL PRIMARY KEY,
