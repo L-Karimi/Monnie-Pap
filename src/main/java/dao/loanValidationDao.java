@@ -1,4 +1,9 @@
 package dao;
+<<<<<<< HEAD
+
+public interface loanValidationDao {
+}
+=======
 import models.LoanValidation;
 
 
@@ -52,3 +57,4 @@ public interface loanValidationDao {
 
 
 
+>>>>>>> dev
