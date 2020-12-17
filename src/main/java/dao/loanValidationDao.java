@@ -20,6 +20,18 @@ public interface loanValidationDao {
     //     DELETE
     void deleteById(int id);
     void clearAllLoanValidation();
+
+    String getLoanPurpose();
+
+    int getAge();
+
+    String getName();
+
+    int getLoanAmount();
+
+    String getOccupation();
+
+     int setId(int id);
 }
 
 

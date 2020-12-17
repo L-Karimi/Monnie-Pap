@@ -1,7 +1,7 @@
 package models;
 
 public class LoanValidation {
-    private static int totalIncome; 
+    private static int totalIncome;
     private LoanRequest request;
 
 

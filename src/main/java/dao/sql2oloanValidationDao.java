@@ -6,7 +6,6 @@ import org.sql2o.Sql2o;
 import org.sql2o.Connection;
 import org.sql2o.Sql2oException;
 
-import javax.tools.StandardLocation;
 import java.util.List;
 
 public abstract class sql2oloanValidationDao implements loanValidationDao {
@@ -15,8 +14,7 @@ public abstract class sql2oloanValidationDao implements loanValidationDao {
     public sql2oloanValidationDao(Sql2o sql2o) {
         this.sql2o = sql2o;
     }
-    @Override
-    public List<Loanee> getAllLoanee() {
+    public List<Loanee> getAllLoanValidation() {
         try (Connection con = sql2o.open()){
             String sql = "SELECT * FROM loans";
             return  con.createQuery(sql)
@@ -33,16 +31,16 @@ public abstract class sql2oloanValidationDao implements loanValidationDao {
             try (Connection con = sql2o.open()) {
                 int id = (int) con.createQuery(sql, true)
                         .throwOnMappingFailure(false)
-                        .bind(loanee)
-                        .addParameter("Cate", loanee.getName())
-                        .addParameter("age", loanee.getAge())
-                        .addParameter("occupation", loanee.getOccupation())
-                        .addParameter("totalIncome", loanee.getLoanAmount())
-                        .addParameter("loanAmount", loanee.getLoanAmount())
-                        .addParameter("loanPurpose", loanee.getLoanPurpose())
+                        .bind(loanValidationDao)
+                        .addParameter("Cate", loanValidationDao.getName())
+                        .addParameter("age", loanValidationDao.getAge())
+                        .addParameter("occupation", loanValidationDao.getOccupation())
+                        .addParameter("totalIncome", loanValidationDao.getLoanAmount())
+                        .addParameter("loanAmount", loanValidationDao.getLoanAmount())
+                        .addParameter("loanPurpose", loanValidationDao.getLoanPurpose())
                         .executeUpdate()
                         .getKey();
-                loanee.setId(id);
+                loanValidationDao.setId(id);
             }catch (Sql2oException ex){
                 System.out.println(ex);
             }
@@ -51,13 +49,39 @@ public abstract class sql2oloanValidationDao implements loanValidationDao {
 
     @Override
     public loanValidationDao findById(int id) {
-        return null;
-    }
+//        return null;
+
+            try(Connection con = sql2o.open()){
+                return (loanValidationDao) con.createQuery("SELECT * FROM lend WHERE id = :id")
+                        .addParameter("id", id)
+                        .executeAndFetchFirst(loanValidationDao.class);
+            }
+        }
+
 
     @Override
     public void update(int id, String name, int age, String occupation, int totalIncome, int loanAmount, String loanPurpose) {
+        String sql = "UPDATE lends SET (name, age, occupation, totalIncome, loanAmount, loanPurpose) = (:name, :age, :occupation, :totalincome, loanpurpose)";
+            try(Connection con = sql2o.open()){
+                String  newOccupation = String.valueOf(0);
+                int newTotalIncome = 0;
+                String newLoanPurpose = String.valueOf(0);
+                String newAge = String.valueOf(0);
+                String newName = String.valueOf(0);
+                con.createQuery(sql)
+                        .addParameter("name", newName)
+                        .addParameter("age", newAge)
+                        .addParameter("occupation", newOccupation)
+                        .addParameter("totalIncome", newTotalIncome)
+                        .addParameter("loanPurpose", newLoanPurpose)
+                        .addParameter("id", id)
+                        .executeUpdate();
+            } catch (Sql2oException ex) {
+                System.out.println(ex);
+            }
+        }
 
-    }
+
 
     @Override
     public void deleteById(int id) {
