@@ -20,6 +20,13 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
+//        loanee details
+        get("/form", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "form.hbs");
+        }, new HandlebarsTemplateEngine());
+//
+
     }
 
 }
