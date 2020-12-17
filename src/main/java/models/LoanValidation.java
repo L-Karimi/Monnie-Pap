@@ -1,7 +1,7 @@
 package models;
 
 public class LoanValidation {
-    private static int totalIncome; 
+    private static int totalIncome;
     private LoanRequest request;
 
 
@@ -75,6 +75,10 @@ public class LoanValidation {
             totalIncome = thousand -= 1;
         }
         return thousand;
+    }
+
+    public int getId() {
+        return 0;
     }
 
     private class CurrentOfferResult {

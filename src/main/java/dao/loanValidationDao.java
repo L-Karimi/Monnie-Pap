@@ -1,12 +1,24 @@
 package dao;
-import models.*;
+import models.LoanValidation;
+
+
+import java.util.BitSet;
 import java.util.List;
 
 public interface loanValidationDao {
 
 
+    static BitSet getAllLoanValidation() {
+        return null;
+    }
+
     //    List
     List<loanValidationDao> getAllLoanValidationD();
+
+//    static List<LoanValidation> getAllLoanValidation() {
+//        return null;
+
+
     //    Create
     void add(loanValidationDao loanValidationDao);
     //    Read
@@ -16,6 +28,18 @@ public interface loanValidationDao {
     //     DELETE
     void deleteById(int id);
     void clearAllLoanValidation();
+
+    String getLoanPurpose();
+
+    int getAge();
+
+    String getName();
+
+    int getLoanAmount();
+
+    String getOccupation();
+
+     int setId(int id);
 }
 
 
