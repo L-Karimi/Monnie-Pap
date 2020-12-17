@@ -77,6 +77,10 @@ public class LoanValidation {
         return thousand;
     }
 
+    public int getId() {
+        return 0;
+    }
+
     private class CurrentOfferResult {
         public LoanValidation amount;
         public LoanValidation interestRate;

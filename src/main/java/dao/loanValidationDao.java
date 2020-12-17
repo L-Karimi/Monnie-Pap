@@ -1,15 +1,23 @@
 package dao;
-import models.Loanee;
+import models.LoanValidation;
 
+
+import java.util.BitSet;
 import java.util.List;
 
 public interface loanValidationDao {
 
 
+    static BitSet getAllLoanValidation() {
+        return null;
+    }
+
     //    List
     List<loanValidationDao> getAllLoanValidationD();
 
-    List<Loanee> getAllLoanee();
+//    static List<LoanValidation> getAllLoanValidation() {
+//        return null;
+
 
     //    Create
     void add(loanValidationDao loanValidationDao);
