@@ -2,5 +2,7 @@ models/AppTest.java
  models.AppTest
 models/LoanValidationTest.java
  models.LoanValidationTest
+dao/sql2loanValidationDaoTest.java
+ dao.sql2loanValidationDaoTest
 models/LoaneeTest.java
  models.LoaneeTest
