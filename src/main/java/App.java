@@ -1,3 +1,7 @@
+import dao.LoaneeDao;
+import dao.Sql2oLoaneeDao;
+import models.Loanee;
+import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -9,10 +13,21 @@ import static spark.Spark.*;
 import static spark.Spark.staticFileLocation;
 
 public class App {
-    Sql2o sql2o = new Sql2o ("jdbc:postgresql://localhost:5432/lend", "moringa", "Nya2rango@");
+
 
     public static void main (String[] args) {
         staticFileLocation("/public");
+
+        Sql2oLoaneeDao LoaneeDao;
+        Connection conn;
+
+//        Sql2o sql2o = new Sql2o ("jdbc:postgresql://localhost:5432/lend", "moringa", "Nya2rango@");
+
+        String connectionString =  ("jdbc:postgresql://localhost:5432/lend");
+        Sql2o sql2o = new Sql2o(connectionString, "moringa", "Nya2rango@");
+        LoaneeDao = new Sql2oLoaneeDao(sql2o);
+        conn = sql2o.open();
+
 
 //        homepage
         get("/", (request, response) -> {
@@ -25,8 +40,21 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "form.hbs");
         }, new HandlebarsTemplateEngine());
-//
 
+        post("/apply", (request, response) -> {
+
+            Map<String, Object> model = new HashMap<>();
+            String name = request.queryParams("name");
+            int age = Integer.parseInt(request.queryParams("age"));
+            String occupation = request.queryParams("occupation");
+            int totalincome = Integer.parseInt(request.queryParams("totalincome"));
+            int loanamount = Integer.parseInt(request.queryParams("loanamount"));
+            String loanpurpose = request.queryParams("loanpurpose");
+            Loanee loanee = new Loanee(name, age, occupation, totalincome,loanamount, loanpurpose);
+            LoaneeDao.add(loanee);
+            model.put("loanee", loanee);
+            return new ModelAndView(model, "Success.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 
 }
