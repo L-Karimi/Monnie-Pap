@@ -1,0 +1,32 @@
+
+{{#partial "content"}}
+    <body style="background-image: url('images/p.jpg'); background-size:cover; background-repeat:no-repeat;">
+
+    <div>
+        <h1>Loan Details</h1>
+    </div>
+    <div class="col-md-6">
+        {{#each Loanee}}
+            <div class="card"  style="background-image: url('images/Terms.jpg'); background-size:cover; background-repeat:no-repeat;">
+                <h3>Name of the applicant: {{Name}}</h3>
+                <hr>
+                <p>Age of the applicant: {{Age}}</p>
+                <hr>
+                <p>Occupation: {{Occupation}}</p>
+                <hr>
+                <p>Total amount of income: {{totalIncome}}</p>
+                <hr>
+                <p>Purpose for loan application{{loanPurpose}}</p>
+                <hr>
+                <p>Amount interested by the applicant{{loanAmount}}</p>
+
+            </div>
+        {{/each}}
+    </div>
+
+    <br>
+    <a class="btn btn-warning" href="/"></a>
+    </body>
+{{/partial}}
+
+{{> layout.hbs}}
