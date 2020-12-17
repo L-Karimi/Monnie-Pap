@@ -20,9 +20,9 @@ public class Sql2oLoaneeDaoTest {
     @Before
     public void setUp() throws Exception {
         String connectionString = "jdbc:postgresql://localhost:5432/lend_test";
-        Sql2o sql2o = new Sql2o(connectionString, "moringa", "Nya2rango@");
+        Sql2o sql2o = new Sql2o(connectionString, "moringa", "lucy");
         loaneeDao = new Sql2oLoaneeDao(sql2o);
-        conn = sql2o.open();
+//        conn = sql2o.open();
     }
 
     @After

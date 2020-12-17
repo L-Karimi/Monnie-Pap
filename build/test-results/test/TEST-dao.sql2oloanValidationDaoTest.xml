@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dao.sql2oloanValidationDaoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-12-17T09:11:52" hostname="moringa-ThinkPad-L450" time="0.032">
-  <properties/>
-  <testcase name="clearAll" classname="dao.sql2oloanValidationDaoTest" time="0.032"/>
-  <testcase name="addingLoanSetsId" classname="dao.sql2oloanValidationDaoTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
