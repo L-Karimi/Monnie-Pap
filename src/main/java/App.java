@@ -55,6 +55,12 @@ public class App {
             model.put("loanee", loanee);
             return new ModelAndView(model, "Success.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/Loanee", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("Loanee", LoaneeDao.getAllLoanee());
+            return new ModelAndView(model, "display-form.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 
 }
