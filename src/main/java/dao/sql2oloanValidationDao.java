@@ -98,7 +98,15 @@ public abstract class sql2oloanValidationDao implements loanValidationDao {
 
     @Override
     public void clearAllLoanValidation() {
+        String sql = "DELETE from lends";
+            try(Connection con = sql2o.open()){
+                con.createQuery(sql)
+                        .executeUpdate();
+            } catch (Sql2oException ex){
+                System.out.println(ex);
+            }
 
+        }
     }
 
-}
+
