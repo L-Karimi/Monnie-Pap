@@ -1,9 +1,7 @@
 package models;
 
 public class LoanValidation {
-<<<<<<< HEAD
-}
-=======
+
     private static int totalIncome;
     private LoanRequest request;
 
@@ -92,4 +90,4 @@ public class LoanValidation {
     private class LoanRequest {
     }
 }
->>>>>>> dev
+

@@ -37,19 +37,21 @@ public class App {
             String name = request.queryParams("name");
             int age = Integer.parseInt(request.queryParams("age"));
             String occupation = request.queryParams("occupation");
-            int totalincome = Integer.parseInt(request.queryParams("totalincome"));
-            int loanamount = Integer.parseInt(request.queryParams("loanamount"));
-            String loanpurpose = request.queryParams("loanpurpose");
-            Loanee loanee = new Loanee(name, age, occupation, totalincome,loanamount, loanpurpose);
+            int totalIncome = Integer.parseInt(request.queryParams("totalIncome"));
+            int loanAmount = Integer.parseInt(request.queryParams("loanAmount"));
+            String loanPurpose = request.queryParams("loanPurpose");
+            Loanee loanee = new Loanee(name, age, occupation, totalIncome, loanAmount, loanPurpose);
             LoaneeDao.add(loanee);
             model.put("loanee", loanee);
-            return new ModelAndView(model, "Success.hbs");
+            return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
-        get("/Loanee", (request, response) -> {
+
+        get("/display-form", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("Loanee", LoaneeDao.getAllLoanee());
             return new ModelAndView(model, "display-form.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
+
 
