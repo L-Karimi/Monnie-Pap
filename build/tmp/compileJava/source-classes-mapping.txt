@@ -6,13 +6,13 @@ models/LoanValidation.java
  models.LoanValidation
  models.LoanValidation$CurrentOfferResult
  models.LoanValidation$LoanRequest
-dao/Sql2oLoaneeDao.java
- dao.Sql2oLoaneeDao
+exceptions/ApiExceptions.java
+ exceptions.ApiExceptions
 dao/sql2oloanValidationDao.java
  dao.sql2oloanValidationDao
 dao/LoaneeDao.java
  dao.LoaneeDao
-exceptions/ApiExceptions.java
- exceptions.ApiExceptions
 App.java
  App
+dao/Sql2oLoaneeDao.java
+ dao.Sql2oLoaneeDao

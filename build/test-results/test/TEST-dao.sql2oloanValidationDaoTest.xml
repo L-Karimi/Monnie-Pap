@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dao.sql2oloanValidationDaoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-12-17T11:32:45" hostname="moringa-ThinkPad-L450" time="0.0">
+<testsuite name="dao.sql2oloanValidationDaoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-12-17T21:38:43" hostname="moringa-ThinkPad-L450" time="0.005">
   <properties/>
-  <testcase name="clearAll" classname="dao.sql2oloanValidationDaoTest" time="0.0"/>
-  <testcase name="addingLoanSetsId" classname="dao.sql2oloanValidationDaoTest" time="0.0"/>
+  <testcase name="clearAll" classname="dao.sql2oloanValidationDaoTest" time="0.003"/>
+  <testcase name="addingLoanSetsId" classname="dao.sql2oloanValidationDaoTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,5 +1,7 @@
 package models;
+
 import java.util.Objects;
+
 public class Loanee {
     private int id;
     private String name;
@@ -19,10 +21,12 @@ public class Loanee {
         this.loanAmount = loanAmount;
         this.loanPurpose = loanPurpose;
     }
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
     public void setId(int id) {
+
         this.id = id;
     }
     public String getName() {
@@ -44,9 +48,11 @@ public class Loanee {
         this.occupation = occupation;
     }
     public int getTotalIncome() {
+
         return totalIncome;
     }
     public void setTotalIncome(int totalIncome) {
+
         this.totalIncome = totalIncome;
     }
     public int getLoanAmount() {
@@ -55,6 +61,7 @@ public class Loanee {
     public void setLoanAmount(int loanAmount) {
         this.loanAmount = loanAmount;
     }
+
     public String getLoanPurpose() {
         return loanPurpose;
     }

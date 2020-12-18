@@ -13,6 +13,7 @@ public class Sql2oLoaneeDao implements LoaneeDao {
     private final Sql2o sql2o;
 
     public Sql2oLoaneeDao(Sql2o sql2o) {
+
         this.sql2o = sql2o;
     }
 
@@ -20,7 +21,7 @@ public class Sql2oLoaneeDao implements LoaneeDao {
     @Override
     public List<Loanee> getAllLoanee() {
         try (Connection con = sql2o.open()){
-            String sql = "SELECT * FROM loans";
+            String sql = "SELECT * FROM lend";
             return  con.createQuery(sql)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(Loanee.class);
@@ -32,17 +33,17 @@ public class Sql2oLoaneeDao implements LoaneeDao {
 
     @Override
     public void add(Loanee loanee) {
-        String sql = "INSERT INTO lend (name, age, occupation, totalIncome, loanAmount, loanPurpose) VALUES (:name, :age, :occupation, :totalincome, :loanamout, :loanpurpose) ";
+        String sql = "INSERT INTO lend (name, age, occupation, totalincome, loanamount, loanpurpose) VALUES (:name, :age, :occupation, :totalincome, :loanamount, :loanpurpose) ";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
                     .throwOnMappingFailure(false)
                     .bind(loanee)
-                    .addParameter("Cate", loanee.getName())
+                    .addParameter("name", loanee.getName())
                     .addParameter("age", loanee.getAge())
                     .addParameter("occupation", loanee.getOccupation())
-                    .addParameter("totalIncome", loanee.getLoanAmount())
-                    .addParameter("loanAmount", loanee.getLoanAmount())
-                    .addParameter("loanPurpose", loanee.getLoanPurpose())
+                    .addParameter("totalincome", loanee.getTotalIncome())
+                    .addParameter("loanamount", loanee.getLoanAmount())
+                    .addParameter("loanpurpose", loanee.getLoanPurpose())
                     .executeUpdate()
                     .getKey();
             loanee.setId(id);

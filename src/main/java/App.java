@@ -1,4 +1,3 @@
-import dao.LoaneeDao;
 import dao.Sql2oLoaneeDao;
 import models.Loanee;
 import org.sql2o.Connection;
@@ -7,8 +6,9 @@ import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.HashMap;
 import java.util.Map;
+
 import static spark.Spark.*;
-import static spark.Spark.staticFileLocation;
+
 public class App {
     public static void main (String[] args) {
         staticFileLocation("/public");
@@ -17,6 +17,7 @@ public class App {
 
         String connectionString =  ("jdbc:postgresql://localhost:5432/lend");
         Sql2o sql2o = new Sql2o(connectionString, "moringa", "lucy");
+
         LoaneeDao = new Sql2oLoaneeDao(sql2o);
         conn = sql2o.open();
 
@@ -41,7 +42,7 @@ public class App {
             int loanAmount = Integer.parseInt(request.queryParams("loanAmount"));
             String loanPurpose = request.queryParams("loanPurpose");
             Loanee loanee = new Loanee(name, age, occupation, totalIncome, loanAmount, loanPurpose);
-            LoaneeDao.add(loanee);
+           LoaneeDao.add(loanee);
             model.put("loanee", loanee);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
@@ -51,6 +52,12 @@ public class App {
             model.put("Loanee", LoaneeDao.getAllLoanee());
             return new ModelAndView(model, "display-form.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/blog", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "blog.hbs");
+        }, new HandlebarsTemplateEngine());
+
     }
 }
 

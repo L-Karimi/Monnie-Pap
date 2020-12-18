@@ -1,7 +1,6 @@
 package dao;
 
 import models.Loanee;
-import org.graalvm.compiler.nodes.InliningLog;
 
 import java.util.List;
 
@@ -10,7 +9,7 @@ public interface LoaneeDao {
     List<Loanee> getAllLoanee();
 
 //    Create
-    void add(Loanee loanee);
+     void add(Loanee loanee);
 
 //    Read
     Loanee findById(int id);

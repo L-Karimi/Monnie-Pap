@@ -6,7 +6,7 @@
         <h1>Loan Details</h1>
     </div>
     <div class="col-md-6">
-        {{#each display-form}}
+        {{#each Loanee}}
             <div class="card"  style="background-image: url('images/Terms.jpg'); background-size:cover; background-repeat:no-repeat;">
                 <h3>Name of the applicant: {{name}}</h3>
                 <hr>
@@ -14,18 +14,18 @@
                 <hr>
                 <p>Occupation: {{occupation}}</p>
                 <hr>
-                <p>Total amount of income: {{totalincome}}</p>
+                <p>Total amount of income: {{totalIncome}}</p>
                 <hr>
-                <p>Purpose for loan application{{loanpurpose}}</p>
+                <p>Purpose for loan application{{loanPurpose}}</p>
                 <hr>
-                <p>Amount interested by the applicant{{loanamount}}</p>
+                <p>Amount interested by the applicant{{loanAmount}}</p>
 
             </div>
         {{/each}}
     </div>
 
     <br>
-    <a class="btn btn-warning" href="/"></a>
+    <a class="btn btn-warning" href="/success"></a>
     </body>
 {{/partial}}
 
