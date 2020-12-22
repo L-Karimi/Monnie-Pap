@@ -18,7 +18,6 @@ public class Sql2oLoaneeDao implements LoaneeDao {
     }
 
 
-    @Override
     public List<Loanee> getAllLoanee() {
         try (Connection con = sql2o.open()){
             String sql = "SELECT * FROM lend";
@@ -31,7 +30,6 @@ public class Sql2oLoaneeDao implements LoaneeDao {
         }
     }
 
-    @Override
     public void add(Loanee loanee) {
         String sql = "INSERT INTO lend (name, age, occupation, totalincome, loanamount, loanpurpose) VALUES (:name, :age, :occupation, :totalincome, :loanamount, :loanpurpose) ";
         try (Connection con = sql2o.open()) {
@@ -53,7 +51,6 @@ public class Sql2oLoaneeDao implements LoaneeDao {
         }
 
 
-    @Override
     public Loanee findById(int id) {
         try(Connection con = sql2o.open()){
             return con.createQuery("SELECT * FROM lend WHERE id = :id")
@@ -62,7 +59,6 @@ public class Sql2oLoaneeDao implements LoaneeDao {
         }
     }
 
-    @Override
     public void update(int id, String newName, int newAge, String newOccupation, int newTotalIncome, int newLoanAmount, String newLoanPurpose) {
         String sql = "UPDATE lends SET (name, age, occupation, totalIncome, loanAmount, loanPurpose) = (:name, :age, :occupation, :totalincome, loanpurpose)";
         try(Connection con = sql2o.open()){
@@ -79,7 +75,6 @@ public class Sql2oLoaneeDao implements LoaneeDao {
         }
     }
 
-    @Override
     public void deleteById(int id) {
         String sql = "DELETE from lend WHERE id=:id";
         try (Connection con = sql2o.open()){
@@ -91,7 +86,6 @@ public class Sql2oLoaneeDao implements LoaneeDao {
         }
     }
 
-    @Override
     public void clearAllLoanee() {
         String sql = "DELETE from lends";
         try(Connection con = sql2o.open()){

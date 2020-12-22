@@ -1,15 +1,11 @@
 package dao;
 
-import models.LoanValidation;
 
 
-import java.util.BitSet;
-import java.util.List;
-
-public interface loanValidationDao {
+public interface loanValidationDao<String> {
 
 
-    static BitSet getAllLoanValidation() {
+    static <BitSet> BitSet getAllLoanValidation() {
         return null;
     }
 
@@ -41,6 +37,9 @@ public interface loanValidationDao {
     String getOccupation();
 
      int setId(int id);
+
+    class List<T> {
+    }
 }
 
 

@@ -6,15 +6,13 @@ import org.sql2o.Sql2o;
 import org.sql2o.Connection;
 import org.sql2o.Sql2oException;
 
-import java.util.List;
-
 public abstract class sql2oloanValidationDao implements loanValidationDao {
     private final Sql2o sql2o;
 
     public sql2oloanValidationDao(Sql2o sql2o) {
         this.sql2o = sql2o;
     }
-    public List<Loanee> getAllLoanValidation() {
+    public java.util.List<Loanee> getAllLoanValidation() {
         try (Connection con = sql2o.open()){
             String sql = "SELECT * FROM loans";
             return  con.createQuery(sql)
@@ -25,7 +23,6 @@ public abstract class sql2oloanValidationDao implements loanValidationDao {
             return null;
         }
     }
-    @Override
     public void add(loanValidationDao loanValidationDao) {
         String sql = "INSERT INTO lend (name, age, occupation, totalIncome, loanAmount, loanPurpose) VALUES (:name, :age, :occupation, :totalincome, :loanamout, :loanpurpose) ";
             try (Connection con = sql2o.open()) {
@@ -47,7 +44,6 @@ public abstract class sql2oloanValidationDao implements loanValidationDao {
         }
 
 
-    @Override
     public loanValidationDao findById(int id) {
 //        return null;
 
@@ -59,7 +55,6 @@ public abstract class sql2oloanValidationDao implements loanValidationDao {
         }
 
 
-    @Override
     public void update(int id, String name, int age, String occupation, int totalIncome, int loanAmount, String loanPurpose) {
         String sql = "UPDATE lends SET (name, age, occupation, totalIncome, loanAmount, loanPurpose) = (:name, :age, :occupation, :totalincome, loanpurpose)";
             try(Connection con = sql2o.open()){
@@ -83,7 +78,6 @@ public abstract class sql2oloanValidationDao implements loanValidationDao {
 
 
 
-    @Override
     public void deleteById(int id) {
         String sql = "DELETE from lend WHERE id=:id";
             try (Connection con = sql2o.open()){
@@ -96,7 +90,6 @@ public abstract class sql2oloanValidationDao implements loanValidationDao {
         }
 
 
-    @Override
     public void clearAllLoanValidation() {
         String sql = "DELETE from lends";
             try(Connection con = sql2o.open()){
