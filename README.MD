@@ -21,6 +21,8 @@ Visit the link - https://github.com/luciahroyalty101/Monnie-Pap
 ## TECNOLOGIES USED
 * java
 * Handlebars
+* Javascript
+* css
 
 ### SUPPORT AND CONTACT DETAILS
 * twitter@luciahkei101
