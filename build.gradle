@@ -3,8 +3,12 @@ plugins {
     id 'application'
 }
 
+
 group 'com.lucy.Monie Pap'
 version '1.0-SNAPSHOT'
+
+
+mainClassName = 'App'
 
 sourceCompatibility = 1.8
 
@@ -17,8 +21,11 @@ dependencies {
     compile "com.sparkjava:spark-core:2.6.0"
     compile 'org.slf4j:slf4j-simple:1.7.21'
     compile 'org.sql2o:sql2o:1.5.4'
-    compile 'com.google.code.gson:gson:2.5'  // to be explained shortly
-
+    compile 'com.google.code.gson:gson:2.5'
 }
+apply plugin: 'java'
 
-mainClassName = 'App'
+
+
+
+
