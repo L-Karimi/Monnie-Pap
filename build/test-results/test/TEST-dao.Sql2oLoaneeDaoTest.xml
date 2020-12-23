@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dao.Sql2oLoaneeDaoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-22T12:05:18" hostname="moringa-ThinkPad-L450" time="0.028">
-  <properties/>
-  <testcase name="addingLoanSetsId" classname="dao.Sql2oLoaneeDaoTest" time="0.028"/>
-  <system-out><![CDATA[connection closed
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
