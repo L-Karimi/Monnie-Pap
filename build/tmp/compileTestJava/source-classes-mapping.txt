@@ -1,8 +1,16 @@
-models/AppTest.java
- models.AppTest
 models/LoanValidationTest.java
  models.LoanValidationTest
+<<<<<<< HEAD
+AppTest.java
+ AppTest
+dao/Sql2oLoaneeDaoTest.java
+ dao.Sql2oLoaneeDaoTest
+dao/sql2oloanValidationDaoTest.java
+ dao.sql2oloanValidationDaoTest
+ dao.sql2oloanValidationDaoTest$Sql2oloanValidationDao
+=======
 dao/sql2loanValidationDaoTest.java
  dao.sql2loanValidationDaoTest
+>>>>>>> master
 models/LoaneeTest.java
  models.LoaneeTest

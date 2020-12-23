@@ -1,12 +1,33 @@
+<<<<<<< HEAD
+App.java
+ App
+=======
 dao/sql2loanValidationDao.java
  dao.sql2loanValidationDao
 models/App.java
  models.App
 exceptions/ApiException.java
  exceptions.ApiException
+>>>>>>> master
 models/Loanee.java
  models.Loanee
 models/LoanValidation.java
  models.LoanValidation
+<<<<<<< HEAD
+ models.LoanValidation$CurrentOfferResult
+ models.LoanValidation$LoanRequest
+dao/Sql2oLoaneeDao.java
+ dao.Sql2oLoaneeDao
+dao/sql2oloanValidationDao.java
+ dao.sql2oloanValidationDao
+dao/LoaneeDao.java
+ dao.LoaneeDao
+exceptions/ApiExceptions.java
+ exceptions.ApiExceptions
 dao/loanValidationDao.java
  dao.loanValidationDao
+ dao.loanValidationDao$List
+=======
+dao/loanValidationDao.java
+ dao.loanValidationDao
+>>>>>>> master
