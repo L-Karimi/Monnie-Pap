@@ -16,7 +16,7 @@ Visit the link - https://github.com/luciahroyalty101/Monnie-Pap
 5. Then open the terminal and write $ gradle run.
 
 ### Link to live site
-* 
+* https://sharp-booth-370b06.netlify.app/index.html
 
 ## TECNOLOGIES USED
 * java
